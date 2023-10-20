@@ -6,7 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using Wpf_KaKaoTalk.Service;
+using Wpf_KaKaoTalk.Views;
 
 namespace Wpf_KaKaoTalk
 {
@@ -20,7 +20,7 @@ namespace Wpf_KaKaoTalk
 
         private void App_Startup(object sender, StartupEventArgs e)
         {
-            var mainView = App.Current.Services.GetService<MainWindow>();
+            var mainView = App.Current.Services.GetService<MainView>();
             mainView.Show();
         }
 
@@ -34,10 +34,10 @@ namespace Wpf_KaKaoTalk
         {
             var services = new ServiceCollection();
 
-            services.AddSingleton<ITestService, TestService>();
+            
 
 
-            services.AddSingleton<MainWindow>();
+            services.AddSingleton<MainView>();
 
             return services.BuildServiceProvider();
         }
