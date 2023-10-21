@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Wpf_KaKaoTalk.ViewModels;
 using Wpf_KaKaoTalk.Views;
 
 namespace Wpf_KaKaoTalk
@@ -34,7 +35,10 @@ namespace Wpf_KaKaoTalk
         {
             var services = new ServiceCollection();
 
-            
+            services.AddTransient<MainViewModel>();
+            services.AddTransient<LoginControlViewModel>();
+            services.AddTransient<SignupControlViewModel>();
+            services.AddTransient<ChangePwdControlViewModel>();
 
 
             services.AddSingleton<MainView>();
